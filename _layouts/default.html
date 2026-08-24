@@ -149,59 +149,49 @@
         </main>
 
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-            const alertTypes = [
-            "NOTE",
-            "TIP",
-            "IMPORTANT",
-            "WARNING",
-            "CAUTION"
-            ];
+        document.addEventListener("DOMContentLoaded", function () {
+          document.querySelectorAll(".markdown-body blockquote").forEach(function (blockquote) {
+            const paragraph = blockquote.querySelector("p");
 
-            document.querySelectorAll(".markdown-body blockquote").forEach(function (blockquote) {
-            const firstParagraph = blockquote.querySelector("p");
-
-            if (!firstParagraph) {
-            return;
+            if (!paragraph) {
+              return;
             }
 
-            const text = firstParagraph.textContent.trim();
-
-            const match = text.match(
-            /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:\s+(.*))?$/i
+            const match = paragraph.textContent.trim().match(
+              /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*(.*)$/i
             );
 
             if (!match) {
-            return;
+              return;
             }
 
             const type = match[1].toLowerCase();
+            const text = match[2];
 
-            // Remove the [!TYPE] marker from the first paragraph.
-            firstParagraph.remove();
-
-            // Create the GitHub-style alert container.
             const alert = document.createElement("div");
             alert.className = "markdown-alert markdown-alert-" + type;
 
-            // Create the title.
             const title = document.createElement("p");
             title.className = "markdown-alert-title";
-            title.textContent = match[2] || (
-            type.charAt(0).toUpperCase() + type.slice(1)
-            );
+            title.textContent =
+              type.charAt(0).toUpperCase() + type.slice(1);
 
             alert.appendChild(title);
 
-            // Move the remaining blockquote content into the alert.
+            if (text) {
+              paragraph.textContent = text;
+              alert.appendChild(paragraph);
+            } else {
+              paragraph.remove();
+            }
+
             while (blockquote.firstChild) {
-            alert.appendChild(blockquote.firstChild);
+              alert.appendChild(blockquote.firstChild);
             }
 
             blockquote.replaceWith(alert);
-            });
-            });
+          });
+        });
         </script>
-
     </body>
 </html>
