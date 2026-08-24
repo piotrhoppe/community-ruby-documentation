@@ -13,27 +13,27 @@ As of June 5th 2007 the following features are provided:
 
 ## Contents
 
-- [1 Colors](#Colors)
-- [2 Syntax highlighting](#Syntax_highlighting)
-- [3 Navigation display](#Navigation_display)
-- [4 Code Folding](#Code_Folding)
-- [5 Background error parsing](#Background_error_parsing)
-- [6 Semantic syntax highlighting,](#Semantic_syntax_highlighting.2C)
-- [7 Mark Occurrences](#Mark_Occurrences)
-- [8 Go To Declaration](#Go_To_Declaration)
-- [9 Instant Rename](#Instant_Rename)
-- [10 Code Templates](#Code_Templates)
-- [11 Code Completion](#Code_Completion)
-- [12 Parameter Hints](#Parameter_Hints)
-- [13 Smart Indent](#Smart_Indent)
-- [14 Smart Selection](#Smart_Selection)
-- [15 Formatting](#Formatting)
-- [16 Pair Matching](#Pair_Matching)
-- [17 Live Code Templates](#Live_Code_Templates)
-- [18 RDoc Support and String Support](#RDoc_Support_and_String_Support)
-- [19 Spell Checking](#Spell_Checking)
-- [20 Type Assertions](#Type_Assertions)
-- [21 Type Inference](#Type_Inference)
+- [1 Colors](#colors)
+- [2 Syntax highlighting](#syntax-highlighting)
+- [3 Navigation display](#navigation-display)
+- [4 Code Folding](#code-folding)
+- [5 Background error parsing](#background-error-parsing)
+- [6 Semantic syntax highlighting,](#semantic-syntax-highlighting)
+- [7 Mark Occurrences](#mark-occurrences)
+- [8 Go To Declaration](#go-to-declaration)
+- [9 Instant Rename](#instant-rename)
+- [10 Code Templates](#code-templates)
+- [11 Code Completion](#code-completion)
+- [12 Parameter Hints](#parameter-hints)
+- [13 Smart Indent](#smart-indent)
+- [14 Smart Selection](#smart-selection)
+- [15 Formatting](#formatting)
+- [16 Pair Matching](#pair-matching)
+- [17 Live Code Templates](#live-code-templates)
+- [18 RDoc Support and String Support](#rdoc-support-and-string-support)
+- [19 Spell Checking](#spell-checking)
+- [20 Type Assertions](#type-assertions)
+- [21 Type Inference](#type-inference)
 
 #### Colors
 
@@ -71,13 +71,13 @@ TheJRuby parser is run in the background when the user stops typing, and provide
 On a successful parse, the parse tree is used to drive additional features. (And in the future, JRuby will hopefully
 provide partial parse trees even on erroneous Ruby files.)
 
-[![File:background-parsing_RubyEditing.png](images/Background-parsing_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Background-parsing_RubyEditing.png)
+![File:background-parsing_RubyEditing.png](images/Background-parsing_RubyEditing.png)
 
 #### Semantic syntax highlighting,
 
 This identifies method calls and definitions, parameters, and unused variables.
 
-[![File:ruby-highlighting_RubyEditing.png](images/Ruby-highlighting_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Ruby-highlighting_RubyEditing.png)
+![File:ruby-highlighting_RubyEditing.png](images/Ruby-highlighting_RubyEditing.png)
 
 #### Mark Occurrences
 
@@ -86,7 +86,7 @@ method call, or class reference) will highlight all other references as well as 
 
 The first example shows parameters highlighted when you place the caret on one of them:
 
-[![File:highlighting4_RubyEditing.png](images/Highlighting4_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Highlighting4_RubyEditing.png)
+![File:highlighting4_RubyEditing.png](images/Highlighting4_RubyEditing.png)
 
 If you place the caret on a method definition, it will highlight all the potential exit points (the last statement of
 the method, as well as any `return, yield, return` or `fail` statements.)
@@ -102,14 +102,14 @@ This feature is also available via editor hyperlinks - hold the Control key (or 
 as you drag the mouse over the source, identifiers are highlighted as hyperlinks. Clicking on a hyperlink will
 warp to its source if possible.
 
-[![File:goto-declaration_RubyEditing.png](images/Goto-declaration_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Goto-declaration_RubyEditing.png)
+![File:goto-declaration_RubyEditing.png](images/Goto-declaration_RubyEditing.png)
 
 #### Instant Rename
 
 Renaming a local or dynamic variable is done in place and all references are updated on the fly. To invoke,
 right click on the element. On OSX, the keybinding is Command-R.
 
-[![File:instant-rename_RubyEditing.png](images/Instant-rename_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Instant-rename_RubyEditing.png)
+![File:instant-rename_RubyEditing.png](images/Instant-rename_RubyEditing.png)
 
 #### Code Templates
 
@@ -127,40 +127,40 @@ In addition, various Ruby builtins such as keywords and predefined constants are
 This is an area where further research is going to yield some improvements using Type inference,
 a symbol cache from the builtin libraries, etc.
 
-[![File:all-completion_RubyEditing.png](images/All-completion_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:All-completion_RubyEditing.png)
+![File:all-completion_RubyEditing.png](images/All-completion_RubyEditing.png)
 
-[![File:singleton-completion_RubyEditing.png](images/Singleton-completion_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Singleton-completion_RubyEditing.png)
+![File:singleton-completion_RubyEditing.png](images/Singleton-completion_RubyEditing.png)
 
-[![File:instance-completion_RubyEditing.png](images/Instance-completion_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Instance-completion_RubyEditing.png)
+![File:instance-completion_RubyEditing.png](images/Instance-completion_RubyEditing.png)
 
 When there is associated ruby documentation (rdoc) for a program element, it is displayed
 in a documentation popup adjacent to the code completion window, as shown in the
 following screenshot:
 
-[![File:completion-docs_RubyEditing.png](images/Completion-docs_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Completion-docs_RubyEditing.png)
+[File:completion-docs_RubyEditing.png](images/Completion-docs_RubyEditing.png)
 
 There is documentation for some builtin keywords as well, based on
 Charlie's ruby spec ([http://www.headius.com/rubyspec/index.php/Ruby_Language](http://www.headius.com/rubyspec/index.php/Ruby_Language))
 
-[![File:ruby-keyword-help_RubyEditing.png](images/Ruby-keyword-help_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Ruby-keyword-help_RubyEditing.png)
+[File:ruby-keyword-help_RubyEditing.png](images/Ruby-keyword-help_RubyEditing.png)
 
 Code completion also provides help in specific contexts. For example, if
 you invoke code completion within the string of a require or load statement,
 it lists available imports:
 
-[![File:require-completion_RubyEditing.png](images/Require-completion_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Require-completion_RubyEditing.png)
+[File:require-completion_RubyEditing.png](images/Require-completion_RubyEditing.png)
 
 If you invoke it in while typing a regular expression, it helps
 you with the regular expression syntax:
 
-[![File:regexp-completion_RubyEditing.png](images/Regexp-completion_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Regexp-completion_RubyEditing.png)
+[File:regexp-completion_RubyEditing.png](images/Regexp-completion_RubyEditing.png)
 
 And if you're typing Ruby code and can't remember the names or meanings of
 dollar variables, or what the escapde codes are following a percent sign,
 use code completion:
 
-[![File:dollar-completion_RubyEditing.png](images/Dollar-completion_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Dollar-completion_RubyEditing.png)
-[![File:percent-completion_RubyEditing.png](images/Percent-completion_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Percent-completion_RubyEditing.png)
+[File:dollar-completion_RubyEditing.png](images/Dollar-completion_RubyEditing.png)
+[File:percent-completion_RubyEditing.png](images/Percent-completion_RubyEditing.png)
 
 There are more scenarios; for example, invoking code completion after
 a "def" keyword will only list inherited methods from the superclasses,
@@ -178,7 +178,7 @@ Hit `<kbd>Alt</kbd>-<kbd>P</kbd>` (or `Ctrl-P`) to see the parameters for the cu
 parameter being edited is shown in bold. (This relies on figuring out the method
 signature for the method being called, which isn't always possible.)
 
-[![File:param-hints_RubyEditing.png](images/Param-hints_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Param-hints_RubyEditing.png)
+[File:param-hints_RubyEditing.png](images/Param-hints_RubyEditing.png)
 
 #### Smart Indent
 
@@ -222,9 +222,7 @@ Pair Matching works on blocks as well.  If you type "for something" and hit Retu
 braces in blocks.
 
 It also works on =begin/=end pairs, as well as here-docs: Try typing
-```
-x = 
-```
+`x = << FOO` and pressing Return.
 
 #### Live Code Templates
 
@@ -235,24 +233,24 @@ parameter to the next.
 
 For example, let's say you define the following snippet:
 
-[![File:create-template_RubyEditing.png](images/Create-template_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Create-template_RubyEditing.png)
+[File:create-template_RubyEditing.png](images/Create-template_RubyEditing.png)
 
 This snippet is named "dob", and if you type "dob" followed by tab in the following
 example, you end up with a do block.  Notice how at expansion time,
 the live code template picked an unused variable name among the candidates;
 the NetBeans live templates can use semantic program information.
 
-[![File:find-unused-local_RubyEditing.png](images/Find-unused-local_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Find-unused-local_RubyEditing.png)
+[File:find-unused-local_RubyEditing.png](images/Find-unused-local_RubyEditing.png)
 
 Here's another logical snippet using semantic information:
 
-[![File:create-ctx-template_RubyEditing.png](images/Create-ctx-template_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Create-ctx-template_RubyEditing.png)
+[File:create-ctx-template_RubyEditing.png](images/Create-ctx-template_RubyEditing.png)
 
 And here's what it exands to; note that when determining the superclass it doesn't
 necessarily just look at the current file; if you were just adding a method to the
 `Integer` class, it would correctly report `Numeric` as the superclass:
 
-[![File:ctx-expansion_RubyEditing.png](images/Ctx-expansion_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Ctx-expansion_RubyEditing.png)
+[File:ctx-expansion_RubyEditing.png](images/Ctx-expansion_RubyEditing.png)
 
 The TextMate snippets have been converted and are bundled with the IDE by default.
 More details on these are described in the [RubyCodeTemplates](../RubyCodeTemplates/RubyCodeTemplates.md) document.
@@ -262,12 +260,12 @@ More details on these are described in the [RubyCodeTemplates](../RubyCodeTempla
 Comments containing RDoc tags or directives will show the RDoc directives as highlighted. Similarly,
 quoted strings will show the escape sequences in bold.
 
-[![File:rdoc-comments_RubyEditing.png](images/Rdoc-comments_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Rdoc-comments_RubyEditing.png)
+[File:rdoc-comments_RubyEditing.png](images/Rdoc-comments_RubyEditing.png)
 
 Embedded code fragments within String literals and regular expressions is also supported, as shown
 here:
 
-[![File:ruby-embedded-strings_RubyEditing.png](images/Ruby-embedded-strings_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Ruby-embedded-strings_RubyEditing.png)
+[File:ruby-embedded-strings_RubyEditing.png](images/Ruby-embedded-strings_RubyEditing.png)
 
 #### Spell Checking
 
@@ -275,7 +273,7 @@ Spell checking is available as a plugin; spell checking is performed not only in
 Ruby comments but in RHTML text as well.  The spell checker knows about RDoc conventions
 to avoid providing false positives on method names, links, symbols, etc.
 
-[![File:base_typos2_RubyEditing.png](images/Base_typos2_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Base_typos2_RubyEditing.png)
+[File:base_typos2_RubyEditing.png](images/Base_typos2_RubyEditing.png)
 
 This feature is not in the standard builds; you can
      [download a plugin](https://web.archive.org/web/20111120002454/http://blogs.sun.com/tor/entry/ruby_screenshot_of_the_week16)
@@ -296,7 +294,7 @@ Last updated 22 Jan 09 by
 
 In 6.7 you can enable enhanced type inference in Options -> Miscellaneous -> Ruby.
 
-[![File:ti_options_RubyEditing.png](images/Ti_options_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Ti_options_RubyEditing.png)
+[File:ti_options_RubyEditing.png](images/Ti_options_RubyEditing.png)
 
 Once enabled, the IDE will try to infer return types for methods and display those types in the navigator and in the code completion dialog. Inferring method types might be slow for some projects and there are certain constructs that the IDE don't know how to infer as of now, so it is not 100% accurate.
 
