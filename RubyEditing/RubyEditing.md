@@ -1,11 +1,5 @@
 # RubyEditing
 
-    
-    
-    
-    
-    
-    
 This page provides status on editing for NetBeans
      [Ruby](../Ruby/Ruby.md)
      support.
@@ -41,14 +35,11 @@ As of June 5th 2007 the following features are provided:
 - [20 Type Assertions](#Type_Assertions)
 - [21 Type Inference](#Type_Inference)
 
-
 #### Colors
 
-    
 The following screenshot explains the various colors you may see in the editor, and their meanings. This obviously differs from theme to theme, and the default theme is shown here:
 
-    
-[![File:colorchart_RubyEditing.png](images/Colorchart_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Colorchart_RubyEditing.png)
+![File:colorchart_RubyEditing.png](images/Colorchart_RubyEditing.png)
 
 #### Syntax highlighting
 
@@ -61,24 +52,22 @@ the editor to select the symbol under the mouse click will include non-Java iden
 The navigator displays the structure of the file, from modules down to individual methods, fields, and attributes. 
 Double-clicking on an element in the navigator window warps to its source in the editor.
 
-[![File:navigator_RubyEditing.png](images/Navigator_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Navigator_RubyEditing.png)
+![File:navigator_RubyEditing.png](images/Navigator_RubyEditing.png)
 
 The structure analyzer is aware of Ruby constructs: `attr, attr_accessor, attr_reader, module_function`
 etc will all properly construct fields, singleton methods etc. that are included in navigation and code completion.
 
-    
 The filtering checkbuttons allow you to filter out private methods, fields, etc.
 
 #### Code Folding
 
 Modules, classes, and methods are foldable.
 
-    
-[![File:folding_RubyEditing.png](images/Folding_RubyEditing.png)](/web/20111120002454/http://wiki.netbeans.org/File:Folding_RubyEditing.png)
+![File:folding_RubyEditing.png](images/Folding_RubyEditing.png)
 
 #### Background error parsing
 
-The JRuby parser is run in the background when the user stops typing, and provides error messages as error annotations.
+TheJRuby parser is run in the background when the user stops typing, and provides error messages as error annotations.
 On a successful parse, the parse tree is used to drive additional features. (And in the future, JRuby will hopefully
 provide partial parse trees even on erroneous Ruby files.)
 
