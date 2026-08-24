@@ -137,30 +137,30 @@ When there is associated ruby documentation (rdoc) for a program element, it is 
 in a documentation popup adjacent to the code completion window, as shown in the
 following screenshot:
 
-[File:completion-docs_RubyEditing.png](images/Completion-docs_RubyEditing.png)
+![File:completion-docs_RubyEditing.png](images/Completion-docs_RubyEditing.png)
 
 There is documentation for some builtin keywords as well, based on
 Charlie's ruby spec ([http://www.headius.com/rubyspec/index.php/Ruby_Language](http://www.headius.com/rubyspec/index.php/Ruby_Language))
 
-[File:ruby-keyword-help_RubyEditing.png](images/Ruby-keyword-help_RubyEditing.png)
+![File:ruby-keyword-help_RubyEditing.png](images/Ruby-keyword-help_RubyEditing.png)
 
 Code completion also provides help in specific contexts. For example, if
 you invoke code completion within the string of a require or load statement,
 it lists available imports:
 
-[File:require-completion_RubyEditing.png](images/Require-completion_RubyEditing.png)
+![File:require-completion_RubyEditing.png](images/Require-completion_RubyEditing.png)
 
 If you invoke it in while typing a regular expression, it helps
 you with the regular expression syntax:
 
-[File:regexp-completion_RubyEditing.png](images/Regexp-completion_RubyEditing.png)
+![File:regexp-completion_RubyEditing.png](images/Regexp-completion_RubyEditing.png)
 
 And if you're typing Ruby code and can't remember the names or meanings of
 dollar variables, or what the escapde codes are following a percent sign,
 use code completion:
 
-[File:dollar-completion_RubyEditing.png](images/Dollar-completion_RubyEditing.png)
-[File:percent-completion_RubyEditing.png](images/Percent-completion_RubyEditing.png)
+![File:dollar-completion_RubyEditing.png](images/Dollar-completion_RubyEditing.png)
+![File:percent-completion_RubyEditing.png](images/Percent-completion_RubyEditing.png)
 
 There are more scenarios; for example, invoking code completion after
 a "def" keyword will only list inherited methods from the superclasses,
@@ -178,7 +178,7 @@ Hit `<kbd>Alt</kbd>-<kbd>P</kbd>` (or `Ctrl-P`) to see the parameters for the cu
 parameter being edited is shown in bold. (This relies on figuring out the method
 signature for the method being called, which isn't always possible.)
 
-[File:param-hints_RubyEditing.png](images/Param-hints_RubyEditing.png)
+![File:param-hints_RubyEditing.png](images/Param-hints_RubyEditing.png)
 
 #### Smart Indent
 
@@ -233,24 +233,24 @@ parameter to the next.
 
 For example, let's say you define the following snippet:
 
-[File:create-template_RubyEditing.png](images/Create-template_RubyEditing.png)
+![File:create-template_RubyEditing.png](images/Create-template_RubyEditing.png)
 
 This snippet is named "dob", and if you type "dob" followed by tab in the following
 example, you end up with a do block.  Notice how at expansion time,
 the live code template picked an unused variable name among the candidates;
 the NetBeans live templates can use semantic program information.
 
-[File:find-unused-local_RubyEditing.png](images/Find-unused-local_RubyEditing.png)
+![File:find-unused-local_RubyEditing.png](images/Find-unused-local_RubyEditing.png)
 
 Here's another logical snippet using semantic information:
 
-[File:create-ctx-template_RubyEditing.png](images/Create-ctx-template_RubyEditing.png)
+![File:create-ctx-template_RubyEditing.png](images/Create-ctx-template_RubyEditing.png)
 
 And here's what it exands to; note that when determining the superclass it doesn't
 necessarily just look at the current file; if you were just adding a method to the
 `Integer` class, it would correctly report `Numeric` as the superclass:
 
-[File:ctx-expansion_RubyEditing.png](images/Ctx-expansion_RubyEditing.png)
+![File:ctx-expansion_RubyEditing.png](images/Ctx-expansion_RubyEditing.png)
 
 The TextMate snippets have been converted and are bundled with the IDE by default.
 More details on these are described in the [RubyCodeTemplates](../RubyCodeTemplates/RubyCodeTemplates.md) document.
@@ -260,12 +260,12 @@ More details on these are described in the [RubyCodeTemplates](../RubyCodeTempla
 Comments containing RDoc tags or directives will show the RDoc directives as highlighted. Similarly,
 quoted strings will show the escape sequences in bold.
 
-[File:rdoc-comments_RubyEditing.png](images/Rdoc-comments_RubyEditing.png)
+![File:rdoc-comments_RubyEditing.png](images/Rdoc-comments_RubyEditing.png)
 
 Embedded code fragments within String literals and regular expressions is also supported, as shown
 here:
 
-[File:ruby-embedded-strings_RubyEditing.png](images/Ruby-embedded-strings_RubyEditing.png)
+![File:ruby-embedded-strings_RubyEditing.png](images/Ruby-embedded-strings_RubyEditing.png)
 
 #### Spell Checking
 
@@ -273,28 +273,26 @@ Spell checking is available as a plugin; spell checking is performed not only in
 Ruby comments but in RHTML text as well.  The spell checker knows about RDoc conventions
 to avoid providing false positives on method names, links, symbols, etc.
 
-[File:base_typos2_RubyEditing.png](images/Base_typos2_RubyEditing.png)
+![File:base_typos2_RubyEditing.png](images/Base_typos2_RubyEditing.png)
 
 This feature is not in the standard builds; you can
-     [download a plugin](https://web.archive.org/web/20111120002454/http://blogs.sun.com/tor/entry/ruby_screenshot_of_the_week16)
-     to get it.
+[download a plugin](https://web.archive.org/web/20111120002454/http://blogs.sun.com/tor/entry/ruby_screenshot_of_the_week16)
+to get it.
 
 #### Type Assertions
 
 To be completed.  In meantime refer to:
-     [http://blogs.sun.com/tor/date/20090113](https://web.archive.org/web/20111120002454/http://blogs.sun.com/tor/date/20090113)
+[http://blogs.sun.com/tor/date/20090113](https://web.archive.org/web/20111120002454/http://blogs.sun.com/tor/date/20090113)
 
-updated Mar 14 by
-     [TorNorbye](/web/20111120002454/http://wiki.netbeans.org/TorNorbye)
+updated Mar 14 by [TorNorbye](/web/20111120002454/http://wiki.netbeans.org/TorNorbye)
 
-Last updated 22 Jan 09 by
-     [greg](/web/20111120002454/http://wiki.netbeans.org/wiki/index.php?title=Greg&action=edit&redlink=1)
+Last updated 22 Jan 09 by [greg](/web/20111120002454/http://wiki.netbeans.org/wiki/index.php?title=Greg&action=edit&redlink=1)
 
 #### Type Inference
 
 In 6.7 you can enable enhanced type inference in Options -> Miscellaneous -> Ruby.
 
-[File:ti_options_RubyEditing.png](images/Ti_options_RubyEditing.png)
+![File:ti_options_RubyEditing.png](images/Ti_options_RubyEditing.png)
 
 Once enabled, the IDE will try to infer return types for methods and display those types in the navigator and in the code completion dialog. Inferring method types might be slow for some projects and there are certain constructs that the IDE don't know how to infer as of now, so it is not 100% accurate.
 
