@@ -147,11 +147,18 @@
         <main class="markdown-body">
             {{ content }}
         </main>
-
+        <footer class="footer">
+            <a href="https://piotrhoppe.github.io/community-ruby-documentation/">NetBeans Community Ruby Plugin Documentation</a>
+        </footer>
         <script>
         document.addEventListener("DOMContentLoaded", function () {
           document.querySelectorAll(".markdown-body blockquote").forEach(function (blockquote) {
-            const paragraph = blockquote.querySelector("p");
+            const icons = {
+                note: "&#9432;",
+                tip: "&#x1F4A1;"
+            };
+
+                        const paragraph = blockquote.querySelector("p");
 
             if (!paragraph) {
               return;
