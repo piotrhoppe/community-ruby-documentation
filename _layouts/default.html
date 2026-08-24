@@ -13,15 +13,12 @@
             {% endif %}
         </title>
 
-        <meta
-            name="description"
-            content="{{ page.description | default: site.description | escape }}"
-            >
-
+        <!-- GitHub Markdown CSS -->
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.9.0/github-markdown.css"
             >
+
         <style>
             .markdown-body {
                 box-sizing: border-box;
@@ -36,12 +33,175 @@
                     padding: 15px;
                 }
             }
+
+            /* GitHub-style Markdown alerts */
+
+            .markdown-alert {
+                padding: 0.5rem 1rem;
+                margin-bottom: 16px;
+                color: inherit;
+                border-left: 0.25em solid #888;
+            }
+
+            .markdown-alert > :first-child {
+                margin-top: 0;
+            }
+
+            .markdown-alert > :last-child {
+                margin-bottom: 0;
+            }
+
+            .markdown-alert-title {
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+                line-height: 1;
+            }
+
+            .markdown-alert-note {
+                border-left-color: #0969da;
+            }
+
+            .markdown-alert-note .markdown-alert-title {
+                color: #0969da;
+            }
+
+            .markdown-alert-tip {
+                border-left-color: #1a7f37;
+            }
+
+            .markdown-alert-tip .markdown-alert-title {
+                color: #1a7f37;
+            }
+
+            .markdown-alert-important {
+                border-left-color: #8250df;
+            }
+
+            .markdown-alert-important .markdown-alert-title {
+                color: #8250df;
+            }
+
+            .markdown-alert-warning {
+                border-left-color: #9a6700;
+            }
+
+            .markdown-alert-warning .markdown-alert-title {
+                color: #9a6700;
+            }
+
+            .markdown-alert-caution {
+                border-left-color: #d1242f;
+            }
+
+            .markdown-alert-caution .markdown-alert-title {
+                color: #d1242f;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                .markdown-alert-note {
+                    border-left-color: #2f81f7;
+                }
+
+                .markdown-alert-note .markdown-alert-title {
+                    color: #2f81f7;
+                }
+
+                .markdown-alert-tip {
+                    border-left-color: #3fb950;
+                }
+
+                .markdown-alert-tip .markdown-alert-title {
+                    color: #3fb950;
+                }
+
+                .markdown-alert-important {
+                    border-left-color: #a371f7;
+                }
+
+                .markdown-alert-important .markdown-alert-title {
+                    color: #a371f7;
+                }
+
+                .markdown-alert-warning {
+                    border-left-color: #d29922;
+                }
+
+                .markdown-alert-warning .markdown-alert-title {
+                    color: #d29922;
+                }
+
+                .markdown-alert-caution {
+                    border-left-color: #f85149;
+                }
+
+                .markdown-alert-caution .markdown-alert-title {
+                    color: #f85149;
+                }
+            }
         </style>
     </head>
 
     <body>
+
         <main class="markdown-body">
             {{ content }}
         </main>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const alertTypes = [
+            "NOTE",
+            "TIP",
+            "IMPORTANT",
+            "WARNING",
+            "CAUTION"
+            ];
+
+            document.querySelectorAll(".markdown-body blockquote").forEach(function (blockquote) {
+            const firstParagraph = blockquote.querySelector("p");
+
+            if (!firstParagraph) {
+            return;
+            }
+
+            const text = firstParagraph.textContent.trim();
+
+            const match = text.match(
+            /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](?:\s+(.*))?$/i
+            );
+
+            if (!match) {
+            return;
+            }
+
+            const type = match[1].toLowerCase();
+
+            // Remove the [!TYPE] marker from the first paragraph.
+            firstParagraph.remove();
+
+            // Create the GitHub-style alert container.
+            const alert = document.createElement("div");
+            alert.className = "markdown-alert markdown-alert-" + type;
+
+            // Create the title.
+            const title = document.createElement("p");
+            title.className = "markdown-alert-title";
+            title.textContent = match[2] || (
+            type.charAt(0).toUpperCase() + type.slice(1)
+            );
+
+            alert.appendChild(title);
+
+            // Move the remaining blockquote content into the alert.
+            while (blockquote.firstChild) {
+            alert.appendChild(blockquote.firstChild);
+            }
+
+            blockquote.replaceWith(alert);
+            });
+            });
+        </script>
+
     </body>
 </html>
