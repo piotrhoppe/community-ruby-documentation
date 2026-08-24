@@ -1,0 +1,17 @@
+title: NetBeans Community Ruby Plugin Documentation
+description: Documentation for the Community Ruby plugin for NetBeans
+
+url: "https://piotrhoppe.github.io"
+baseurl: "/community-ruby-documentation"
+
+markdown: GFM
+
+relative_links:
+  enabled: true
+  collections: true
+
+titles_from_headings:
+  enabled: true
+
+sass:
+  style: compressed
