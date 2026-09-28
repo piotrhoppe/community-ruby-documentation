@@ -79,21 +79,21 @@ Examples
 
 Let's define the following snippet:
 
-![create-template](https://web.archive.org/web/20111127133159/http://wiki.netbeans.org/wiki/attach/RubyEditing/create-template.png)
+![create-template](../RubyEditing/images/Create-template_RubyEditing.png)
 
 (Note - the above screenshot shows an older version of the code template format. `unusedlocal` is no longer a key name, it's an attribute, so the correct template format should be do |${1 unusedlocal defaults="i,j,k"}| )
 
 This snippet is named "dob". If you type "dob" followed by tab, you end up with a do block. Notice how at expansion time the live code template picked an unused variable name among the candidates; the NetBeans live templates can use semantic program information.
 
-![find-unused-local](https://web.archive.org/web/20111127133159/http://wiki.netbeans.org/wiki/attach/RubyEditing/find-unused-local.png)
+![find-unused-local](../RubyEditing/images/Find-unused-local_RubyEditing.png)
 
 Here's another logical snippet using semantic information:
 
-![create-ctx-template](https://web.archive.org/web/20111127133159/http://wiki.netbeans.org/wiki/attach/RubyEditing/create-ctx-template.png)
+![create-ctx-template](../RubyEditing/images/Create-ctx-template_RubyEditing.png)
 
 The screenshot below displays what it expands to. Note that when determining the superclass it doesn't necessarily just look at the current file. If you were just adding a method to the `Integer` class, it would correctly report `Numeric` as the superclass:
 
-![ctx-expansion](https://web.archive.org/web/20111127133159/http://wiki.netbeans.org/wiki/attach/RubyEditing/ctx-expansion.png)
+![ctx-expansion](../RubyEditing/images/Ctx-expansion_RubyEditing.png)
 
 #### Surround With
 
